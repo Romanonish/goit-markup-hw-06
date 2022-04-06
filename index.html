@@ -61,40 +61,6 @@
                 <h1 class="hero-title"> Эффективные решения для вашего бизнеса</h1>
                 <button type="button" class="button" data-modal-open>Заказать услугу</button>
             </div>
-
-            <!-- модальное окно -->
-            <div class="hero-backdrop is-hidden" data-modal>
-                <div class="hero-modal">
-                    <button class="button-close" data-modal-close>
-                        <svg class="icon-close" width="18px" height="18px">
-                            <use href="./images/icons.svg#icon-close"></use>
-                        </svg>
-                    </button>
-                    <form class="order-form">
-                        <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
-                        <div class="inputarea">
-                            <label for="name" class="form-label">Имя</label>
-                        <input type="text" name="username" id="name">
-                        
-                        <label for="tel" class="form-label">Телефон</label>
-                        <input type="tel" id="tel">
-                        
-                        <label for="email" class="form-label">Почта</label>
-                        <input type="email" id="email">
-                        
-                        <label for="comment" class="form-label">Комментарий</label>
-                        <textarea name="comment" placeholder="Введите текст" id="comment" rows="10"></textarea></div>
-                        
-
-                        <input type="checkbox" id="agreement">
-                        <label for="agreement" class="form-label">Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a></label>
-
-                        <button type="submit">Отправить</button>
-                    </form>
-                    
-
-                </div>
-            </div>
         </section>
 
         <!--Особенности-->
@@ -429,8 +395,97 @@
                     </li>
                 </ul>
             </div>
+            <div class="subscription">
+                <h2 class="footer-links-title">Подпишитесь на рассылку</h2>
+                <form class="footer-form">
+                    <input type="email" name="subscription" placeholder="E-mail">
+                    <button type="submit" class="button">Подписаться</button>
+                </form>
+            </div>
         </div>
+        
     </footer>
+
+    <!-- модальное окно -->
+    <div class="hero-backdrop is-hidden" data-modal>
+        <div class="hero-modal">
+            <button class="button-close" data-modal-close>
+                <svg class="icon-close" width="18px" height="18px">
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+            <form class="order-form js-speaker-form">
+                <b class="form-title">Оставьте свои данные, мы вам перезвоним</b>
+                <ul class="inputarea">
+                    <li class="inputarea-item">
+                        <label for="name" class="form-label">Имя</label>
+                        <input type="text" class="form-input" name="username" id="name" autocomplete="off">
+                        <span class="form-thumb">
+                            <svg class="form-icon" width="18px" height="18px">
+                                <use href="./images/icons.svg#name-icon"></use>
+                            </svg>
+                        </span>
+                    </li>
+    
+                    <li class="inputarea-item">
+                        <label for="tel" class="form-label">Телефон</label>
+                        <input type="tel" class="form-input name=" tel" id="tel">
+                        <span class="form-thumb">
+                            <svg class="form-icon" width="18px" height="18px">
+                                <use href="./images/icons.svg#tel-icon"></use>
+                            </svg>
+                        </span>
+                    </li>
+    
+                    <li class="inputarea-item">
+                        <label for="email" class="form-label">Почта</label>
+                        <input type="email" class="form-input name=" email" id="email">
+                        <span class="form-thumb">
+                            <svg class="form-icon" width="18px" height="18px">
+                                <use href="./images/icons.svg#email-icon"></use>
+                            </svg>
+                        </span>
+                    </li>
+    
+                    <li class="inputarea-item">
+                        <label for="comment" class="form-label">Комментарий</label>
+                        <textarea name="comment" class="form-input placeholder=" Введите текст" id="comment"
+                            rows="10"></textarea>
+                    </li>
+                </ul>
+                <div class="agreement-form">
+                    <label class="form-label"><input type="checkbox" class="checkbox-input visually-hidden">
+                    <span class="form-checkbox">
+                        <svg class="checkbox-icon" width="16px" height="15px">
+                            <use href="./images/icons.svg#checkbox">
+                        </svg>
+                        <svg class="checkbox-icon active" width="16px" height="15px">
+                            <use href="./images/icons.svg#checkbox-active">
+                        </svg>
+                    </span>Соглашаюсь с рассылкой и принимаю <a href="">Условия
+                            договора</a></label>
+                </div>
+                <button type="submit" class="button">Отправить</button>
+            </form>
+    
+    
+        </div>
+    </div>
     <script src="./js/modal.js"></script>
+    <script>
+        (() => {
+            document
+                .querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+
+                    e.currentTarget.reset();
+                });
+        })();
+    </script>
 </body>
 </html>
