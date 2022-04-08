@@ -19,6 +19,7 @@
   --icon-bkgrnd: #f5f4fa;
   --footer-icon-bkgrnd: rgba(255, 255, 255, 0.1);
   --card-overlay: rgba(33, 150, 243, 0.9);
+  --footer-background-color: rgba(47, 48, 58, 1);
 
   /* Border colors */
   --header-border: #ececec;
@@ -307,9 +308,12 @@ button:focus {
 
 .hero-modal {
   position: absolute;
-  z-index: 1100;
+  z-index: 100;
   width: 528px;
-  /* height: 581px; */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 41px;
+  padding-right: 39px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
@@ -367,10 +371,6 @@ button:focus {
   text-align: left;
   font-size: 12px;
   line-height: 1.17;
-}
-
-.order-form {
-  margin-top: 40px;
 }
 
 .order-form textarea {
@@ -457,18 +457,11 @@ button:focus {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
 }
 
 .agreement-form label {
   font-size: 14px;
   line-height: 1.71;
-}
-
-.agreement-form input {
-  width: 16px;
-  height: 15px;
-
 }
 
 .agreement-form a {
@@ -493,7 +486,7 @@ button:focus {
 .checkbox-icon{
 position: absolute;
 top: 50%;
-left: 54px;
+left: 13px;
 transform: translate(0, -50%);
 fill: var(--checkbox-color);
 transition: background-color 250ms var(--timing-function);
@@ -924,7 +917,7 @@ fill: var(--white-color);
 }
 
 .footer {
-  background-color: var(--title-color);
+  background-color: var(--footer-background-color);
 }
 
 .footer-text {
@@ -972,7 +965,7 @@ fill: var(--white-color);
 .footer-form input {
   width: 358px;
   height: 50px;
-  background-color: var(--title-color);
+  background-color: var(--footer-background-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
